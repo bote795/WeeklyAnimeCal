@@ -7,7 +7,7 @@
 		<title>Title Page</title>
 
 		<!-- Bootstrap CSS -->
-		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,11 +17,31 @@
 		<![endif]-->
 	</head>
 	<body>
-		<h1 class="text-center">Hello World</h1>
+		<div class = "container">
+			<h1 class="text-center">Hello World</h1>
+		    <div class="checkbox">
+		    	<!-- will contain anime names -->
+		    </div>
+			<!-- jQuery -->
+			<script src="js/jquery.js"></script>
+			<script src="js/RetrieveData.js"></script>
+			<script src="js/GUI.js"></script>
+			<!-- Bootstrap JavaScript -->
+			<script src="js/bootstrap.min.js"></script>
+			<script>
+			$target =$('.checkbox');
+			RetrieveData(function(animes)
+			{
+			  checkBoxes="";
+			  for (var key in animes) 
+			  {
+			  	checkBoxes+=CreateCheckbox(key)
+			  }
+			  $target.append(checkBoxes);
+			});
 
-		<!-- jQuery -->
-		<script src="//code.jquery.com/jquery.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+			</script>
+
+		</div>
 	</body>
 </html>
