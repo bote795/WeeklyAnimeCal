@@ -18,7 +18,7 @@
 	</head>
 	<body>
 		<div class = "container">
-			<h1 class="text-center">Hello World</h1>
+			<h1 class="text-center">WeeklyAnimeCal</h1>
 		    <div class="checkbox">
 		    	<!-- will contain anime names -->
 		    </div>
@@ -26,18 +26,34 @@
 			<script src="js/jquery.js"></script>
 			<script src="js/RetrieveData.js"></script>
 			<script src="js/GUI.js"></script>
+			<script src="js/Functions.js"></script>
 			<!-- Bootstrap JavaScript -->
 			<script src="js/bootstrap.min.js"></script>
 			<script>
+
 			$target =$('.checkbox');
 			RetrieveData(function(animes)
 			{
 			  checkBoxes="";
+			  days={}; //dictionary of arrays
 			  for (var key in animes) 
 			  {
 			  	checkBoxes+=CreateCheckbox(key)
+			  	A_Date=animes[key]["date"].split("-"); //y,m,d
+			  	day =DayOfWeek(A_Date[0],A_Date[1],A_Date[2]);
+			  	if(day in days)
+			  	{
+			  		days[day].push(animes[key]);
+			  		days[day] = days[day];
+				}
+				else
+				{
+					days[day]= [animes[key]];
+				}	
+
 			  }
 			  $target.append(checkBoxes);
+
 			});
 
 			</script>

@@ -25,9 +25,7 @@ function RetrieveData(callback)
 	});
 
 }
-RetrieveData(function(){
-  console.log("done");
-});
+
 //retrieve the information needed from the html in json
 //takes in html in json
 //retruns a dictionary of animes with anime name as key and a dictionary of pic_src, name,src url,dateReleased
