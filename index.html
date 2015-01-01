@@ -22,6 +22,23 @@
 		    <div class="checkbox">
 		    	<!-- will contain anime names -->
 		    </div>
+		    <div class="table-responsive">
+		    	<table id="TableCalender" class="table table-hover">
+		    		<thead>
+		    			<tr>
+		    				<th>Monday</th>
+		    				<th>Tuesday</th>
+		    				<th>Wensday</th>
+		    				<th>Thursday</th>
+		    				<th>Friday</th>
+		    				<th>Saturday</th>
+		    				<th>Sunday</th>
+		    			</tr>
+		    		</thead>
+		    		<tbody>
+		    		</tbody>
+		    	</table>
+		    </div>
 			<!-- jQuery -->
 			<script src="js/jquery.js"></script>
 			<script src="js/RetrieveData.js"></script>
@@ -30,7 +47,7 @@
 			<!-- Bootstrap JavaScript -->
 			<script src="js/bootstrap.min.js"></script>
 			<script>
-
+			//$(document).ready( function() {
 			$target =$('.checkbox');
 			RetrieveData(function(animes)
 			{
@@ -53,7 +70,8 @@
 
 			  }
 			  $target.append(checkBoxes);
-
+			  var $target_table = $('#TableCalender > tbody');
+			  $target_table.append(CreateTableRows(days));
 			});
 
 			</script>
