@@ -3,7 +3,7 @@ function CreateCheckbox(name)
 {
 	string=""; 
 	string+="<label>"+
-		"<input type='checkbox'> "+name+
+		"<input type='checkbox' value='"+name+"'> "+name+
 	"</label>";
 	return string;
 }
