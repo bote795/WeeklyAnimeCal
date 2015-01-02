@@ -3,7 +3,7 @@ function CreateCheckbox(name)
 {
 	string=""; 
 	string+="<label>"+
-		"<input type='checkbox' value='"+name+"'> "+name+
+		"<input type='checkbox' value='"+JSON.stringify(name)+"'> "+name+
 	"</label>";
 	return string;
 }
@@ -23,7 +23,7 @@ function CreateTableRows(DictAnimesPDay)
 		}
 	}
 	//loop that many times
-	for (var i = 6; i >= 0; i--) {
+	for (var i = MaxSize; i >= 0; i--) {
 		//create table row inside looping through 0-6 and adding the td
 		var TableRow="<tr>";
 		for(var e=0; e <=6; e++)
@@ -32,7 +32,7 @@ function CreateTableRows(DictAnimesPDay)
 			{
 				temp=DictAnimesPDay[e].pop()
 				id_temp =ConvertText(temp["name"]);
-				TableRow+= "<td id='"+ id_temp + "' style='visibility:hidden'>"+ temp["name"] +"</td>"
+				TableRow+= "<td id='"+ id_temp + "'>"+ temp["name"] +"</td>"
 			}
 			else
 			{
