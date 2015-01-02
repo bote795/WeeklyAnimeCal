@@ -55,7 +55,7 @@
 			  days={}; //dictionary of arrays
 			  for (var key in animes) 
 			  {
-			  	checkBoxes+=CreateCheckbox(key)
+			  	checkBoxes+=CreateCheckbox(animes[key]["name"])
 			  	A_Date=animes[key]["date"].split("-"); //y,m,d
 			  	day =DayOfWeek(A_Date[0],A_Date[1],A_Date[2]);
 			  	animes[key]["day"]=day;
@@ -67,7 +67,7 @@
 			 	$ArrayChecked=$(":checked");
 			 	console.log($ArrayChecked);
 			 	$.each($ArrayChecked,function(){
-			 		key=JSON.parse(this.value);
+			 		key=this.value;
 			 		console.log(key);
 			 		console.log(animes[key]["day"] );
 				  	if(animes[key]["day"] in days)
@@ -90,7 +90,7 @@
 				  		days[i]=[];
 				  	}
 				  }
-				  console.log(days)
+				  console.log(days);
 				  temp=CreateTableRows(days);
 				  console.log(temp);
 				  $target_table.empty();

@@ -38,7 +38,7 @@ function ParseNewAnimeTable(tablerows)
         temp["name"] = this.td[1].a.content;
         temp["src"] = "http://www.animenewsnetwork.com"+this.td[1].a.href;
         temp["date"] = this.td[2].p;
-        dict[this.td[1].a.content]=temp;
+        dict[ConvertText(this.td[1].a.content)]=temp;
       });
   return dict;
 }

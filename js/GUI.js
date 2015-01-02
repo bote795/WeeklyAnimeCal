@@ -3,7 +3,7 @@ function CreateCheckbox(name)
 {
 	string=""; 
 	string+="<label>"+
-		"<input type='checkbox' value='"+JSON.stringify(name)+"'> "+name+
+		"<input type='checkbox' value='"+ConvertText(name)+"'> "+name+
 	"</label>";
 	return string;
 }
