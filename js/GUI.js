@@ -31,16 +31,24 @@ function CreateTableRows(DictAnimesPDay)
 			if ( DictAnimesPDay[e].length !=0) 
 			{
 				temp=DictAnimesPDay[e].pop()
-				console.log(temp);
-				TableRow+= "<td>"+ temp["name"] +"</td>"
+				id_temp =ConvertText(temp["name"]);
+				TableRow+= "<td id='"+ id_temp + "' style='visibility:hidden'>"+ temp["name"] +"</td>"
 			}
 			else
 			{
-				TableRow+= "<td></td>"
+				TableRow+= "<td style='visibility:hidden'></td>"
 			}
 		}
 		TableRow+="</tr>";
 		TableRows+=TableRow;
 	}
 	return TableRows;
+}
+function ConvertText(temp)
+{
+	/*index=temp.indexOf("(");
+	temp=temp.substring(0,index)
+	id_temp=temp.replace(/ /g,"_");*/
+	id_temp=temp.replace(/\s+/g, '-').replace(/[^a-zA-Z-]/g, '').toLowerCase();
+	return id_temp;
 }

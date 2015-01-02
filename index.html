@@ -69,9 +69,25 @@
 				}	
 
 			  }
+			  //make sure there is an array in every slot of days even if its empty
+			  for (var i = 6; i >= 0; i--) {
+			  	if(!(i in days))
+			  	{
+			  		days[i]=[];
+			  	}
+			  }
 			  $target.append(checkBoxes);
 			  var $target_table = $('#TableCalender > tbody');
 			  $target_table.append(CreateTableRows(days));
+			  $('input').change(function(e) { 		    	
+			  	text=$(e.currentTarget).context.nextSibling;
+			 	temp=ConvertText(text.textContent);
+			 	temp=temp.substring(1,temp.length);
+			 	if($("#"+temp)[0].style.cssText == "visibility: hidden;")
+			 		$("#"+temp)[0].style.cssText="visibility:true";
+			 	else
+			 		$("#"+temp)[0].style.cssText="visibility:hidden";
+			 });
 			});
 
 			</script>
