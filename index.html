@@ -65,8 +65,11 @@
 
 			  $('input').change(function(e) { 	
 			 	$ArrayChecked=$(":checked");
+			 	console.log($ArrayChecked);
 			 	$.each($ArrayChecked,function(){
 			 		key=this.value;
+			 		console.log(key);
+			 		console.log(animes[key]["day"] );
 				  	if(animes[key]["day"] in days)
 				  	{
 				  		days[animes[key]["day"]].push(animes[key]);
@@ -87,7 +90,9 @@
 				  		days[i]=[];
 				  	}
 				  }
+				  console.log(days);
 				  temp=CreateTableRows(days);
+				  console.log(temp);
 				  $target_table.empty();
 			 	$target_table.append(temp);
 			 });
