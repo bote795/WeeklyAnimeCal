@@ -9,3 +9,8 @@ function DayOfWeek(y, m, d)
 	return Math.floor(w % 7);
 
 }
+//formatTimestring('08/09/2010:12:00') //20100908T120000Z
+function formatTimestring(s) {
+  var b = s.split(/[\/:]/);
+  return b[2] + b[1] + b[0] + 'T' + b[3] + b[4] + '00' + 'Z'
+}

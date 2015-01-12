@@ -34,11 +34,19 @@ function ParseNewAnimeTable(tablerows)
    dict={};
       $.each(tablerows, function(){
         temp = {};
-        temp["pic_src"]=this.td[0].img.src;
+        if(!IsUndefined(this.td[0].img))
+          temp["pic_src"]=this.td[0].img.src;
         temp["name"] = this.td[1].a.content;
         temp["src"] = "http://www.animenewsnetwork.com"+this.td[1].a.href;
         temp["date"] = this.td[2].p;
         dict[ConvertText(this.td[1].a.content)]=temp;
       });
   return dict;
+}
+function IsUndefined(item)
+{
+  if (item === "undefined")
+      return false;
+  else
+      return true;
 }
