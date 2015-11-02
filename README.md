@@ -4,7 +4,8 @@
 
 ##Goal
 Show a weekly glance of when your anime comes out.  
-based of [animenewsnetowrk.com](http://www.animenewsnetwork.com/encyclopedia/anime/upcoming/tv)  
+based of <a href="http://www.animenewsnetwork.com/encyclopedia/anime/upcoming/tv" target="_blank">animenewsnetowrk.com</a>
+  
 
 ##Description
 Allows user to select animes and show a 7day calender of when there anime will come out. (mon-sun)
@@ -19,5 +20,5 @@ each day contains animes in an array
 
 
 ##Checkout live:
-
-http://bote795.github.io/WeeklyAnimeCal
+<a href="http://bote795.github.io/WeeklyAnimeCal" target="_blank">
+Live Project</a>
