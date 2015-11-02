@@ -10,7 +10,13 @@ based of <a href="http://www.animenewsnetwork.com/encyclopedia/anime/upcoming/tv
 ##Description
 Allows user to select animes and show a 7day calender of when there anime will come out. (mon-sun)
 
-##Key concept
+##Features
+* YQL API
+* Xpath
+* Bootstrap 
+* Javascript
+ 
+##Key concept to Remember
 
 anime dictionary is a  dictionary of animes with anime name as key 
 and a dictionary of pic_src, name,src url,date
