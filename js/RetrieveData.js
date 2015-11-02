@@ -8,7 +8,7 @@ function RetrieveData(callback)
    mainurl='http://api.phantomjscloud.com/single/browser/v1/'+apikey+'/?targetUrl='+ 
     url+'&requestType=text'; 
   
-	query ='select * from html where url="'+ mainurl+'" and xpath="//table[@class=\'datalist\']"';
+	query ='select * from html where url="'+ mainurl+'" and xpath="//table[@class=\'upcoming-anime\']"';
 	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
   
 	$.getJSON(yqlAPI, function(){
@@ -34,18 +34,18 @@ function ParseNewAnimeTable(tablerows)
    dict={};
       $.each(tablerows, function(){
         temp = {};
-        if(!IsUndefined(this.td[0].img))
-          temp["pic_src"]=this.td[0].img.src;
+        if(IsUndefined(this.td[0].img))
+          temp["pic_src"]= "http://www.animenewsnetwork.com"+this.td[0].img.src;
         temp["name"] = this.td[1].a.content;
         temp["src"] = "http://www.animenewsnetwork.com"+this.td[1].a.href;
-        temp["date"] = this.td[2].p;
+        temp["date"] = this.td[2].p || this.td[2];
         dict[ConvertText(this.td[1].a.content)]=temp;
       });
   return dict;
 }
 function IsUndefined(item)
 {
-  if (item === "undefined")
+  if (item === undefined)
       return false;
   else
       return true;

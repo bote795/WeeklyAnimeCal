@@ -65,6 +65,7 @@
 
 			  $('input').change(function(e) { 	
 			 	$ArrayChecked=$(":checked");
+			 	console.log($ArrayChecked);
 			 	$.each($ArrayChecked,function(){
 			 		key=this.value;
 				  	if(animes[key]["day"] in days)
