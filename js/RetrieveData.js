@@ -36,10 +36,10 @@ function ParseNewAnimeTable(tablerows)
         temp = {};
         if(IsUndefined(this.td[0].img))
           temp["pic_src"]= "http://www.animenewsnetwork.com"+this.td[0].img.src;
-        temp["name"] = this.td[1].a.content;
+        temp["name"] = this.td[1].a.content.replace(/\(([^\)]*)\)/,""); //remove infomration inside "("* *")"
         temp["src"] = "http://www.animenewsnetwork.com"+this.td[1].a.href;
         temp["date"] = this.td[2].p || this.td[2];
-        dict[ConvertText(this.td[1].a.content)]=temp;
+        dict[ConvertText(this.td[1].a.content.replace(/\(([^\)]*)\)/,""))]=temp;
       });
   return dict;
 }
