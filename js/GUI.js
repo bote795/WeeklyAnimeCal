@@ -1,3 +1,4 @@
+var cal;
 //takes a name and returns the html for a checkbox
 function CreateCheckbox(name)
 {

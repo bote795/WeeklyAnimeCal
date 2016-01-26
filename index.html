@@ -41,6 +41,7 @@
 		    </div>
 			<!-- jQuery -->
 			<script src="js/jquery.js"></script>
+			<script src="js/ics.deps.min.js"></script>
 			<script src="js/RetrieveData.js"></script>
 			<script src="js/GUI.js"></script>
 			<script src="js/Functions.js"></script>
@@ -88,14 +89,18 @@
 				  		days[i]=[];
 				  	}
 				  }
+				  createCalender(days);
 				  temp=CreateTableRows(days);
 				  $target_table.empty();
 			 	$target_table.append(temp);
 			 });
 
 			});
-
-			</script>
+				function MyFunction (argument) {
+					cal.download('Anime');
+				}
+			</script> 
+		    <a href="#" onclick="MyFunction();">Anime Calender Export</a>
 
 		</div>
 	</body>

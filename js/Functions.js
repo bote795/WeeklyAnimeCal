@@ -14,3 +14,50 @@ function formatTimestring(s) {
   var b = s.split(/[\/:]/);
   return b[2] + b[1] + b[0] + 'T' + b[3] + b[4] + '00' + 'Z'
 }
+/*
+	create a calender
+	@param days
+		an object of keys 0-6
+		each key with an array of animes inside
+		6: <arrayOfAnime>
+		<arrayOfAnime> = each slot has an object following fields: (example)
+		date: "2016-01-09"
+		day: 6
+		name: "Fairy Tail Zero "
+		pic_src: "http://www.animenewsnetwork.com/thumbnails/fit200x200/encyc/A17834-3754845054.1451501672.jpg"
+		src: "http://www.animenewsnetwork.com/encyclopedia/anime.php?id=17834"
+	return a calender
+*/
+function createCalender(days)
+{
+	cal = ics();
+	//cal.addEvent(subject, description, location, begin, end);
+	for (var i = 0; i < Object.keys(days).length; i++) {
+		for (var j = 0; j < days[i].length; j++) {
+			var anime = days[i][j];
+			//need to add an extra 0 for new Date js class to pick up date correctly
+			/*
+				new Date("2016-01-09")
+				Fri Jan 08 2016 18:00:00 GMT-0600 (Central Standard Time)
+				new Date("2016-01-009")
+				Sat Jan 09 2016 00:00:00 GMT-0600 (Central Standard Time)				
+			*/
+			var temp  = anime["date"];
+			var newDate = temp.substring(0,8)+"0"+temp.substring(8,10);
+
+			var date = new Date(newDate);
+
+			for (var z = 0; z < 12; z++) {
+				var month = date.getMonth() + 1; //months from 1-12
+				var day = date.getDate();
+				var year = date.getFullYear();
+
+				var newdate =  month + "/" + day+"/"+ year;
+				cal.addEvent(anime["name"],anime["name"]+" will comeout sometime today","Japan",newdate,newdate);
+				//add 7 days for next week
+				date.setDate(date.getDate()+7);
+			};
+			
+		};
+	};
+}
