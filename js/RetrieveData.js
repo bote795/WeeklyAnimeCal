@@ -5,7 +5,7 @@ function RetrieveData(callback)
 {
   apikey="0e9bb2bd65868488844a1d5c2e34c7362d5790de";
   url="http://www.animenewsnetwork.com/encyclopedia/anime/upcoming/tv";
-	query ='select * from html where url="'+ mainurl+'" and xpath="//table[@class=\'upcoming-anime\']"';
+	query ='select * from html where url="'+ url+'" and xpath="//table[@class=\'upcoming-anime\']"';
 	var yqlAPI = 'https://query.yahooapis.com/v1/public/yql?q=' + encodeURIComponent(query) + ' &format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=?';
   
 	$.getJSON(yqlAPI, function(){
