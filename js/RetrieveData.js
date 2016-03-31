@@ -15,7 +15,7 @@ function RetrieveData(callback)
 	  })
 	.success(function(r){
 	  console.log("sucess"); //.results.table[0]
-	  tablerows= r.query.results.table[1].tbody.tr;
+	  tablerows= r.query.results.table[0].tbody.tr;
      dict=ParseNewAnimeTable(tablerows); 
       callback(dict);
 	})  
