@@ -35,7 +35,7 @@ function CreateTableRows(DictAnimesPDay)
 				id_temp =ConvertText(temp["name"]);
 				TableRow+= "<td id='"+ id_temp + "'> <div class='image'>"+
 				 	"<img height='150' width='150' src='"+temp["pic_src"]+"' align=''> "+
-				 		"<p>"+temp["name"] +"</p>" +
+				 		"<p><b>"+temp["name"] +"</b></p>" +
 				 	"</div></td>";
 			}
 			else

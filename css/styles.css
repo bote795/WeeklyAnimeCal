@@ -6,7 +6,8 @@
     position: absolute;
     left: 0;
     width: 100%;
-    /* top: 10px; */
+	color: white;
+	font-style: oblique;
     bottom: 10px;
     word-wrap: break-word;
     white-space: normal;
