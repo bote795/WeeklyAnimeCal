@@ -1,0 +1,14 @@
+.image {
+    position: relative;
+    width: 100%;
+}
+.image > p {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* top: 10px; */
+    bottom: 10px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
